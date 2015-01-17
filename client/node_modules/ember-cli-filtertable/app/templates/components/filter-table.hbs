@@ -1,0 +1,33 @@
+<table class="table table-striped table-hovered filtertable">
+<thead>
+{{#if showTextFilter}}
+  <tr><th {{bind-attr colspan=headerFilterColspan}}>
+    {{input type="text" value=textFilter autofocus="autofocus"
+            placeholder="Enter search filter" class="form-control"}}
+  </th></tr>
+{{/if}}
+<tr>
+{{#if showCheckboxes}}
+  <th class="checkbox-all">{{input type="checkbox" name="allSelected"
+                                   checked=selectAll}}</th>
+{{/if}}
+  {{partial headerTemplate}}
+</tr>
+</thead>
+<tbody>
+{{#if hasNoActualRecords}}
+  <tr><td {{bind-attr colspan=headerFilterColspan}}><span class="label label-danger">Note:</span> No records exist yet</td></tr>
+{{else}}{{#if hasNoFilteredRecords}}
+  <tr><td {{bind-attr colspan=headerFilterColspan}}><span class="label label-warning">Note:</span> No records match your filter</td></tr>
+{{else}}
+{{#each r in filteredRecords}}
+  <tr>
+  {{#if showCheckboxes}}
+  <td>{{input type="checkbox" name="r.selected" checked=r.selected}}</td>
+  {{/if}}
+  {{partial bodyTemplate}}
+  </tr>
+{{/each}}
+{{/if}}{{/if}}
+</tbody>
+</table>

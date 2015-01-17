@@ -1,0 +1,42 @@
+html, body {
+  margin: 20px;
+}
+
+$font-stack:    Helvetica, sans-serif;
+$primary-color: #393;
+$secondary-color: #933;
+$greylink: #888;
+$small-font: 12px;
+
+body {
+  font: 100% $font-stack;
+  color: $primary-color;
+}
+
+h2 {
+  color: $secondary-color;
+  div.rightlink {
+    float: right;
+    padding-right: 20px;
+    a {
+      font-size: $small-font;
+      color: $greylink;
+    }
+  }
+}
+
+nav {
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  li { display: inline-block; }
+
+  a {
+    display: block;
+    padding: 6px 12px;
+    text-decoration: none;
+  }
+}

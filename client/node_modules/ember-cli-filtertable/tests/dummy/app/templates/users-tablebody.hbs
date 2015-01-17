@@ -1,0 +1,4 @@
+<td><strong>{{r.fullName}}</strong>
+    {{#unless r.isActive}}<span class="label label-warning">inactive</span>{{/unless}}</td>
+<td>{{r.email}}</td>
+<td {{action "remove" "removeRow" r}}>(remove)</td>

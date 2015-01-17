@@ -1,0 +1,6 @@
+<ul>
+  {{#each class in model}}
+      <li>{{#link-to 'class' class}}{{class.name}}{{/link-to}}</li>
+  {{/each}}
+</ul>
+{{outlet}}
