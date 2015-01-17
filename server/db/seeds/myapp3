@@ -1,0 +1,45 @@
+'use strict';
+
+exports.seed = function(knex, Promise) {
+  return Promise.all([
+
+    knex('teachers').truncate(),
+    knex('class').truncate(),
+    knex('teachers_class').truncate(),
+
+    knex('teachers').insert([
+      {
+        name: 'Joe Smith',
+        email: 'jsmith@test.net',
+        pwdhash: '5f4dcc3b5aa765d61d8327deb882cf99'
+      },
+      {
+        name: 'Vanessa Smith',
+        email: 'vsmith@test.net',
+        pwdhash: '5f4dcc3b5aa765d61d8327deb882cf99'
+      }
+    ]),
+
+    knex('class').insert([
+      {
+        name: 'Introduction to Wood Shop'
+      },
+      {
+        name: 'Fifth-Order Differential Equations in Modern Cooking'
+      }
+    ]),
+
+    knex('teachers_class').insert([
+      {
+        teachers_id: '1',
+        class_id: '1'
+      },
+      {
+        teachers_id: '2',
+        class_id: '2'
+      }
+    ])
+
+  ]);
+
+};

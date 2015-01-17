@@ -1,0 +1,31 @@
+{
+  "name": "server",
+  "version": "0.0.1",
+  "description": "REST API for MyApp3",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wiredgms/myapp3.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wiredgms/myapp3/issues"
+  },
+  "homepage": "https://github.com/wiredgms/myapp3",
+  "dependencies": {
+    "bookshelf": "^0.7.9",
+    "hapi": "^8.1.0",
+    "joi": "^5.1.0",
+    "knex": "^0.7.3",
+    "lout": "^6.1.0",
+    "moment": "^2.9.0",
+    "sqlite3": "^3.0.4"
+  },
+  "devDependencies": {
+    "joi": "^5.1.0"
+  }
+}
