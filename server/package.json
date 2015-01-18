@@ -23,6 +23,7 @@
     "knex": "^0.7.3",
     "lout": "^6.1.0",
     "moment": "^2.9.0",
+    "pg": "^4.2.0",
     "sqlite3": "^3.0.4"
   },
   "devDependencies": {

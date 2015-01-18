@@ -1,12 +1,17 @@
 var Hapi = require('hapi');
 var Joi = require('joi');
+var dbconfig = require('./knexfile');
 
+/*
 var knex = require('knex')({
   client: 'sqlite3',
   connection: {
       filename: "./dev.sqlite3"
   }
 });
+*/
+
+var knex = require('knex')(dbconfig.development);   //'development', 'staging', 'production' -- soon 'test'
 
 var bookshelf = require('bookshelf')(knex);
 

@@ -15,12 +15,31 @@ module.exports = {
     }
   },
 
+/*
+  development: {
+    client: 'postgresql',
+    connection: {
+      database: 'testdb',
+      user:     'wired',
+      password: '5432'
+    },
+    pool: {
+      min: 2,
+      max: 10
+    },
+    migrations: {
+      tableName: 'knex_migrations',
+      directory: './db/migrations'
+    }
+  },
+*/
+
   staging: {
     client: 'postgresql',
     connection: {
-      database: 'my_db',
-      user:     'username',
-      password: 'password'
+      database: 'testdb',
+      user:     'wired',
+      password: '5432'
     },
     pool: {
       min: 2,

@@ -2,7 +2,7 @@
 
 exports.up = function(knex, Promise) {
   return Promise.all([
-    //knex.raw('SET foreign_key_checks = 0;'),     //postgreSQL style
+    //knex.raw('SET foreign_key_checks = 0;'),       //MySQL style
     knex.raw('PRAGMA foreign_keys = OFF'),         //sqlite3 style
 
     /* CREATE teacher table */
@@ -76,14 +76,14 @@ exports.up = function(knex, Promise) {
       .inTable('class');
     }),
 
-    //knex.raw('SET foreign_key_checks = 1;')     //postgreSQL style
+    //knex.raw('SET foreign_key_checks = 1;')       //MySQL style
     knex.raw('PRAGMA foreign_keys = ON')          //sqlite3 style
   ]);
 };
 
 exports.down = function(knex, Promise) {
   return Promise.all([
-//    knex.raw('SET foreign_key_checks = 0;'),    //postgreSQL style
+    //knex.raw('SET foreign_key_checks = 0;'),      //MySQL style
     knex.raw('PRAGMA foreign_keys = OFF'),        //sqlite3 style
 
     knex.schema.dropTable('student'),
@@ -98,7 +98,7 @@ exports.down = function(knex, Promise) {
 
     knex.schema.dropTable('class_student'),
 
-//    knex.raw('SET foreign_key_checks = 1;')     //postgreSQL style
+    //knex.raw('SET foreign_key_checks = 1;')       //MySQL style
     knex.raw('PRAGMA foreign_keys = ON')          //sqlite3 style
 
   ]);
